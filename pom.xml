@@ -1,0 +1,119 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.nuodb.pentaho</groupId>
+    <artifactId>pdi-nuodb-plugin</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>pdi-nuodb-plugin</name>
+    <url>http://maven.apache.org</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <organization>
+        <name>NuoDB, Inc.</name>
+        <url>http://www.nuodb.com/</url>
+    </organization>
+
+    <licenses>
+        <license>
+            <name>BSD 2 Clause License</name>
+            <url>http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>rbuck</id>
+            <name>Robert Buck</name>
+            <email>rbuck@nuodb.com</email>
+            <organization>NuoDB, Inc.</organization>
+            <roles>
+                <role>Author</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <issueManagement>
+        <system>Github Code Issue Tracking</system>
+        <url>https://github.com/nuodb/pdi-nuodb-plugin/issues</url>
+    </issueManagement>
+
+    <scm>
+        <connection>scm:git:https://github.com/nuodb/pdi-nuodb-plugin.git</connection>
+        <developerConnection>scm:git:https://github.com/nuodb/pdi-nuodb-plugin.git</developerConnection>
+        <url>https://github.com/nuodb/pdi-nuodb-plugin.git</url>
+    </scm>
+
+    <dependencies>
+        <dependency>
+            <groupId>pentaho-kettle</groupId>
+            <artifactId>kettle-core</artifactId>
+            <version>5.0.0</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>pentaho-kettle</groupId>
+            <artifactId>kettle-engine</artifactId>
+            <version>5.0.0</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>pentaho-kettle</groupId>
+            <artifactId>kettle-test</artifactId>
+            <version>4.4.3.3</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.nuodb.jdbc</groupId>
+            <artifactId>nuodb-jdbc</artifactId>
+            <version>2.0.3</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <repositories>
+        <repository>
+            <id>pentaho-repo</id>
+            <url>http://repo.pentaho.org/artifactory/pentaho/</url>
+        </repository>
+        <repository>
+            <id>pentaho-third-party</id>
+            <url>http://repo.pentaho.org/artifactory/third-party/</url>
+        </repository>
+    </repositories>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.2.1</version>
+                <executions>
+                    <execution>
+                        <id>assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <descriptors>
+                                <descriptor>src/main/assembly/assembly.xml</descriptor>
+                            </descriptors>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
