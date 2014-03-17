@@ -11,6 +11,12 @@ A plugin for Pentaho PDI (ETL) to enable NuoDB JDBC support in Pentaho.
 
     mvn clean install
 
+# Releasing
+
+Keeping the Release 1.0 associated with this project, delete the prior associated artifact and then save, then attach an updated artifact to the release. The Pentaho Marketplace will automatically pick this up.
+
+Only update the release number when a version incompatibility exists for Pentaho and we must change our implementation.
+
 # Installation
 
 Install the plugin via the Pentaho Marketplace:
